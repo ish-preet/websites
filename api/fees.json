@@ -1,0 +1,56 @@
+[
+  {
+    "course": "Computer Science Engineering",
+    "range": "₹2,00,000 - ₹3,50,000 per year",
+    "breakdown": {
+      "tuition": "₹1,80,000",
+      "hostel": "₹80,000",
+      "other": "₹40,000"
+    }
+  },
+  {
+    "course": "Business Administration",
+    "range": "₹4,00,000 - ₹6,00,000 per year",
+    "breakdown": {
+      "tuition": "₹3,50,000",
+      "hostel": "₹1,00,000",
+      "other": "₹50,000"
+    }
+  },
+  {
+    "course": "Data Science",
+    "range": "₹2,50,000 - ₹4,00,000 per year",
+    "breakdown": {
+      "tuition": "₹2,20,000",
+      "hostel": "₹80,000",
+      "other": "₹40,000"
+    }
+  },
+  {
+    "course": "Mechanical Engineering",
+    "range": "₹1,80,000 - ₹3,00,000 per year",
+    "breakdown": {
+      "tuition": "₹1,60,000",
+      "hostel": "₹80,000",
+      "other": "₹40,000"
+    }
+  },
+  {
+    "course": "Electrical Engineering",
+    "range": "₹1,80,000 - ₹3,00,000 per year",
+    "breakdown": {
+      "tuition": "₹1,60,000",
+      "hostel": "₹80,000",
+      "other": "₹40,000"
+    }
+  },
+  {
+    "course": "Civil Engineering",
+    "range": "₹1,80,000 - ₹3,00,000 per year",
+    "breakdown": {
+      "tuition": "₹1,60,000",
+      "hostel": "₹80,000",
+      "other": "₹40,000"
+    }
+  }
+]

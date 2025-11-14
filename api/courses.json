@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Computer Science Engineering",
+    "description": "Comprehensive program covering software development, algorithms, and computer systems with industry-oriented projects.",
+    "duration": "4 Years",
+    "type": "BTech"
+  },
+  {
+    "name": "Business Administration",
+    "description": "Develop leadership and strategic management skills with real-world business case studies and internships.",
+    "duration": "2 Years",
+    "type": "MBA"
+  },
+  {
+    "name": "Data Science",
+    "description": "Master advanced analytics, machine learning, and big data technologies with hands-on projects.",
+    "duration": "4 Years",
+    "type": "BTech"
+  },
+  {
+    "name": "Mechanical Engineering",
+    "description": "Learn design, analysis, and manufacturing of mechanical systems with modern engineering tools.",
+    "duration": "4 Years",
+    "type": "BTech"
+  },
+  {
+    "name": "Electrical Engineering",
+    "description": "Comprehensive program in power systems, electronics, and control systems with lab experiments.",
+    "duration": "4 Years",
+    "type": "BTech"
+  },
+  {
+    "name": "Civil Engineering",
+    "description": "Focus on infrastructure development, construction technology, and sustainable design principles.",
+    "duration": "4 Years",
+    "type": "BTech"
+  }
+]

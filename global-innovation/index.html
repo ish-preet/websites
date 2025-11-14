@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Innovation University | Excellence in Education</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="logo-text">
+            <h2>Global Innovation University</h2>
+            <p>Established 1985</p>
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#campus">Campus</a></li>
+          <li><a href="#research">Research</a></li>
+          <li>
+            <button class="nav-cta" onclick="openModal()">
+              <i class="fas fa-user-plus"></i>
+              Join Us
+            </button>
+          </li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="university-badge">
+            <span>NAAC A++</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="title-line-1">Global Innovation</span>
+            <span class="title-line-2">University</span>
+          </h1>
+          <p class="hero-subtitle">
+            Where Tradition Meets Innovation in Education
+          </p>
+          <p class="hero-description">
+            For over three decades, we have been shaping future leaders through
+            our commitment to academic excellence, research innovation, and
+            global perspectives.
+          </p>
+
+          <div class="hero-achievements">
+            <div class="achievement">
+              <span class="achievement-number">92%</span>
+              <span class="achievement-text">Placement Record</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-number">150+</span>
+              <span class="achievement-text">International Partnerships</span>
+            </div>
+            <div class="achievement">
+              <span class="achievement-number">75+</span>
+              <span class="achievement-text">Academic Programs</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="openFeeModal()">
+              <i class="fas fa-file-invoice-dollar"></i>
+              Fee Structure
+            </button>
+            <button class="btn btn-outline" onclick="openModal()">
+              <i class="fas fa-book-open"></i>
+              View Prospectus
+            </button>
+            <button class="btn btn-accent" onclick="openModal()">
+              <i class="fas fa-edit"></i>
+              Apply Now
+            </button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="campus-shot">
+            <div class="image-overlay">
+              <div class="overlay-text">
+                <h3>Historic Campus</h3>
+                <p>150-acre green campus with modern facilities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Legacy of Excellence</h2>
+          <p class="section-subtitle">
+            38 years of shaping minds and building futures
+          </p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Welcome to Global Innovation University</h3>
+            <p>
+              Founded in 1985, Global Innovation University has established
+              itself as a premier institution of higher learning, combining rich
+              academic traditions with forward-thinking innovation.
+            </p>
+            <p>
+              Our sprawling 150-acre campus provides the perfect environment for
+              holistic development, featuring state-of-the-art facilities,
+              extensive research centers, and a vibrant international community.
+            </p>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                  <span class="stat-number">15,000+</span>
+                  <span class="stat-label">Students</span>
+                </div>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <div>
+                  <span class="stat-number">800+</span>
+                  <span class="stat-label">Faculty</span>
+                </div>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-globe"></i>
+                <div>
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">Countries</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-award"></i>
+              <h4>Accredited Excellence</h4>
+              <p>NAAC A++ Grade with UGC recognition</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-researchgate"></i>
+              <h4>Research Focus</h4>
+              <p>₹50+ crore annual research funding</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-handshake"></i>
+              <h4>Industry Connect</h4>
+              <p>300+ corporate partnerships</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics" class="section academics-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Academic Programs</h2>
+          <p class="section-subtitle">
+            Comprehensive education across diverse disciplines
+          </p>
+        </div>
+        <div class="programs-container" id="courses-container">
+          <!-- Programs loaded from API -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="section admissions-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Admissions 2024</h2>
+          <p class="section-subtitle">Begin your journey to excellence</p>
+        </div>
+        <div class="admissions-content">
+          <div class="admission-info">
+            <h3>Application Process</h3>
+            <div class="process-steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Submit Application</h4>
+                  <p>
+                    Complete the online application form with required documents
+                  </p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Entrance Test</h4>
+                  <p>Appear for GIU Entrance Examination (GIUEE)</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Personal Interview</h4>
+                  <p>Participate in the selection interview process</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4>Admission Offer</h4>
+                  <p>Receive and accept your admission offer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="admission-cta">
+            <div class="cta-card">
+              <h4>Ready to Apply?</h4>
+              <p>
+                Begin your application process today and take the first step
+                toward an exceptional educational journey.
+              </p>
+              <button class="btn btn-primary" onclick="openModal()">
+                Start Application
+              </button>
+              <button class="btn btn-outline" onclick="openFeeModal()">
+                View Fee Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Form Modal -->
+    <div id="leadModal" class="modal">
+      <div class="modal-container">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Admission Inquiry</h2>
+            <button class="modal-close" onclick="closeModal()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <form id="leadForm" class="inquiry-form">
+            <div class="form-section">
+              <h3>Personal Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="fullName">Full Name *</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    placeholder="Enter your full name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Mobile Number *</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="[6-9][0-9]{9}"
+                    required
+                    placeholder="98XXXXXX20"
+                  />
+                  <small>10-digit Indian mobile number</small>
+                </div>
+                <div class="form-group">
+                  <label for="state">State of Residence *</label>
+                  <select id="state" name="state" required>
+                    <option value="">Select your state</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="tamilnadu">Tamil Nadu</option>
+                    <option value="up">Uttar Pradesh</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3>Academic Interest</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="course">Program of Interest *</label>
+                  <select id="course" name="course" required>
+                    <option value="">Select program</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="intakeYear">Preferred Intake *</label>
+                  <select id="intakeYear" name="intakeYear" required>
+                    <option value="">Select intake year</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="consent-group">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent">
+                  I hereby agree to receive information, updates, and
+                  promotional communications from Global Innovation University
+                  regarding admissions, programs, and events. *
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">
+              <i class="fas fa-paper-plane"></i>
+              Submit Inquiry
+            </button>
+          </form>
+          <div id="formMessage" class="form-message"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fee Modal -->
+    <div id="feeModal" class="modal">
+      <div class="modal-container">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Program Fee Structure</h2>
+            <button class="modal-close" onclick="closeFeeModal()">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="fee-structure" id="feeContent">
+            <!-- Fee data loaded from API -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechNova University | Technology & Innovation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h2>TechNova University</h2>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#courses">Programs</a></li>
+          <li><a href="#fees">Investments</a></li>
+          <li><a href="#placements">Careers</a></li>
+          <li><a href="#facilities">Campus</a></li>
+          <li>
+            <button class="nav-btn" onclick="openModal()">
+              Start Application
+            </button>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-background">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="title-main">Shape the Future</span>
+              <span class="title-sub">with Technology & Innovation</span>
+            </h1>
+            <p class="hero-description">
+              Join India's premier technology university where innovation meets
+              excellence. Ranked #1 for placements in technology education.
+            </p>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">96%</span>
+                <span class="stat-label">Placement Rate</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">₹42L</span>
+                <span class="stat-label">Highest Package</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Tech Programs</span>
+              </div>
+            </div>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" onclick="openFeeModal()">
+                <i class="fas fa-indian-rupee-sign"></i>
+                View Fee Structure
+              </button>
+              <button class="btn btn-secondary" onclick="openModal()">
+                <i class="fas fa-download"></i>
+                Get Brochure
+              </button>
+              <button class="btn btn-accent" onclick="openModal()">
+                <i class="fas fa-paper-plane"></i>
+                Apply Now
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="floating-card card-1">
+              <i class="fas fa-laptop-code"></i>
+              <span>AI & Machine Learning</span>
+            </div>
+            <div class="floating-card card-2">
+              <i class="fas fa-robot"></i>
+              <span>Robotics Lab</span>
+            </div>
+            <div class="floating-card card-3">
+              <i class="fas fa-chart-network"></i>
+              <span>Research Center</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why TechNova University?</h2>
+          <p class="section-subtitle">
+            Pioneering technology education since 2005
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3>Advanced Labs</h3>
+            <p>
+              State-of-the-art laboratories with cutting-edge technology and
+              equipment for hands-on learning.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Industry Partners</h3>
+            <p>
+              Strong ties with 200+ tech companies including Google, Microsoft,
+              and Infosys for internships.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-globe-asia"></i>
+            </div>
+            <h3>Global Exposure</h3>
+            <p>
+              International exchange programs with top universities in USA,
+              Germany, and Singapore.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <h3>Expert Faculty</h3>
+            <p>
+              Learn from industry veterans and PhD holders with decades of
+              teaching experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="courses" class="section bg-dark">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Technology Programs</h2>
+          <p class="section-subtitle">
+            Future-ready curriculum designed for industry 4.0
+          </p>
+        </div>
+        <div class="programs-grid" id="courses-container">
+          <!-- Programs loaded from API -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Fee Section -->
+    <section id="fees" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Investment in Your Future</h2>
+          <p class="section-subtitle">
+            Transparent fee structure with flexible payment options
+          </p>
+        </div>
+        <div class="fee-cta">
+          <button class="btn btn-large" onclick="openFeeModal()">
+            <i class="fas fa-calculator"></i>
+            Check Detailed Fee Structure
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Form Modal -->
+    <div id="leadModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Begin Your Tech Journey</h2>
+          <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <form id="leadForm" class="lead-form">
+          <div class="form-group">
+            <label for="fullName">Full Name *</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              required
+              placeholder="Enter your full name"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="your.email@example.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Mobile Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[6-9][0-9]{9}"
+                required
+                placeholder="98XXXXXX20"
+              />
+              <small>10-digit Indian number</small>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="state">State *</label>
+              <select id="state" name="state" required>
+                <option value="">Select your state</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="delhi">Delhi</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="up">Uttar Pradesh</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="course">Program Interest *</label>
+              <select id="course" name="course" required>
+                <option value="">Choose program</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="intakeYear">Preferred Intake *</label>
+            <select id="intakeYear" name="intakeYear" required>
+              <option value="">Select intake year</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+            </select>
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent"
+              >I wish to receive information about programs, events, and updates
+              from TechNova University *</label
+            >
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i>
+            Submit Application
+          </button>
+        </form>
+        <div id="formMessage" class="form-message"></div>
+      </div>
+    </div>
+
+    <!-- Fee Modal -->
+    <div id="feeModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Program Fee Structure</h2>
+          <span class="close" onclick="closeFeeModal()">&times;</span>
+        </div>
+        <div class="fee-content" id="feeContent">
+          <!-- Fee data loaded from API -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
