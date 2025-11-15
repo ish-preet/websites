@@ -257,25 +257,57 @@ class GlobalInnovationUniversity {
     this.displayFeeData(fallbackFees);
   }
 
-  async handleFormSubmit(e) {
+ async handleFormSubmit(e) {
     e.preventDefault();
-
+    
+    console.log("Form submission started..."); // ADD THIS LINE
+    
     if (!this.validateForm()) {
-      return;
+        console.log("Form validation failed"); // ADD THIS LINE
+        return;
     }
 
     const formData = this.collectFormData();
-
+    console.log("Form data:", formData); // ADD THIS LINE
+    
     try {
-      await this.submitFormData(formData);
-      this.showSuccessMessage();
-      this.resetForm();
-      setTimeout(() => this.closeModal(), 2500);
-    } catch (error) {
-      this.showErrorMessage();
-    }
-  }
+        // Show loading state
+        const submitBtn = this.leadForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+        submitBtn.disabled = true;
 
+        console.log("Sending to Pipedream..."); // ADD THIS LINE
+        
+        const response = await fetch(this.PIPEDREAM_ENDPOINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        console.log("Response status:", response.status); // ADD THIS LINE
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log("Pipedream response:", result); // ADD THIS LINE
+            this.showSuccessMessage();
+            this.resetForm();
+            setTimeout(() => this.closeModal(), 2000);
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        this.showErrorMessage();
+    } finally {
+        const submitBtn = this.leadForm.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }
+}
   collectFormData() {
     return {
       fullName: document.getElementById('fullName').value,
@@ -446,3 +478,4 @@ style.textContent = `
   .step:nth-child(4) { transition-delay: 0.3s; }
 `;
 document.head.appendChild(style);
+
