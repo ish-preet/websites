@@ -25,7 +25,7 @@ class GlobalInnovationUniversity {
             });
         }
 
-        // Form submission - FIXED
+        // Form submission
         this.leadForm = document.getElementById('leadForm');
         if (this.leadForm) {
             this.leadForm.addEventListener('submit', (e) => this.handleFormSubmit(e));
@@ -65,7 +65,6 @@ class GlobalInnovationUniversity {
     }
 
     setupAnimations() {
-        // Add intersection observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -79,7 +78,6 @@ class GlobalInnovationUniversity {
             });
         }, observerOptions);
 
-        // Observe elements for animation
         document.querySelectorAll('.feature, .program-card, .step, .stat-item').forEach(el => {
             observer.observe(el);
         });
@@ -173,6 +171,30 @@ class GlobalInnovationUniversity {
                 description: "Develop leadership skills and business acumen through case studies and industry projects.",
                 duration: "2 Years",
                 type: "MBA"
+            },
+            {
+                name: "Engineering Sciences",
+                description: "Foundation in engineering principles with specialization in emerging technologies.",
+                duration: "4 Years",
+                type: "BTech"
+            },
+            {
+                name: "Medical Sciences",
+                description: "Rigorous program in medical education with clinical training and research opportunities.",
+                duration: "5.5 Years",
+                type: "MBBS"
+            },
+            {
+                name: "Law & Governance",
+                description: "Comprehensive legal education with moot courts and internship programs.",
+                duration: "5 Years",
+                type: "BA LLB"
+            },
+            {
+                name: "Architecture & Design",
+                description: "Creative program focusing on sustainable design and architectural innovation.",
+                duration: "5 Years",
+                type: "BArch"
             }
         ];
         
@@ -190,6 +212,24 @@ class GlobalInnovationUniversity {
                     hostel: "₹80,000",
                     other: "₹50,000"
                 }
+            },
+            {
+                course: "Business Management",
+                range: "₹4,50,000 - ₹6,50,000 per year",
+                breakdown: {
+                    tuition: "₹3,80,000",
+                    hostel: "₹1,20,000",
+                    other: "₹1,50,000"
+                }
+            },
+            {
+                course: "Engineering Sciences",
+                range: "₹2,50,000 - ₹4,00,000 per year",
+                breakdown: {
+                    tuition: "₹2,00,000",
+                    hostel: "₹1,00,000",
+                    other: "₹1,00,000"
+                }
             }
         ];
         
@@ -199,7 +239,7 @@ class GlobalInnovationUniversity {
     async handleFormSubmit(e) {
         e.preventDefault();
         
-        console.log("Form submission started...");
+        console.log("=== FORM SUBMISSION STARTED ===");
         
         if (!this.validateForm()) {
             console.log("Form validation failed");
@@ -207,7 +247,8 @@ class GlobalInnovationUniversity {
         }
 
         const formData = this.collectFormData();
-        console.log("Form data:", formData);
+        console.log("Form data collected:", formData);
+        console.log("Sending to:", this.PIPEDREAM_ENDPOINT);
         
         try {
             // Show loading state
@@ -216,8 +257,7 @@ class GlobalInnovationUniversity {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
             submitBtn.disabled = true;
 
-            console.log("Sending to Pipedream:", this.PIPEDREAM_ENDPOINT);
-            
+            // Send to Pipedream
             const response = await fetch(this.PIPEDREAM_ENDPOINT, {
                 method: 'POST',
                 headers: {
@@ -230,21 +270,31 @@ class GlobalInnovationUniversity {
             console.log("Response ok:", response.ok);
 
             if (response.ok) {
-                console.log("Form submitted successfully!");
-                this.showSuccessMessage();
+                console.log("✅ Form submitted successfully to Pipedream!");
+                
+                // Show personalized success message with form data
+                this.showSuccessMessage(formData);
                 this.resetForm();
-                setTimeout(() => this.closeModal(), 2000);
+                
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    this.closeModal();
+                }, 3000);
+                
             } else {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error('❌ Error submitting form:', error);
             this.showErrorMessage();
         } finally {
+            // Reset button state
             const submitBtn = this.leadForm.querySelector('button[type="submit"]');
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Inquiry';
-            submitBtn.disabled = false;
+            if (submitBtn) {
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Inquiry';
+                submitBtn.disabled = false;
+            }
         }
     }
 
@@ -281,29 +331,37 @@ class GlobalInnovationUniversity {
         return true;
     }
 
-    showSuccessMessage() {
-        this.showFormMessage('✅ Thank you for your inquiry! Our admission team will contact you within 24 hours.', 'success');
+    showSuccessMessage(formData) {
+        const message = `
+            ✅ Thank you <strong>${formData.fullName}</strong>!<br><br>
+            Your inquiry for <strong>${formData.course}</strong> has been submitted successfully.<br>
+            We'll contact you at <strong>${formData.email}</strong> or <strong>${formData.phone}</strong> within 24 hours.
+        `;
+        this.showFormMessage(message, 'success');
     }
 
     showErrorMessage() {
-        this.showFormMessage('❌ Sorry, there was an error submitting your inquiry. Please try again.', 'error');
+        this.showFormMessage('❌ Sorry, there was an error submitting your inquiry. Please try again or contact our admission office.', 'error');
     }
 
     showFormMessage(message, type) {
         const messageDiv = document.getElementById('formMessage');
         if (!messageDiv) return;
 
-        messageDiv.textContent = message;
+        messageDiv.innerHTML = message;
         messageDiv.className = `form-message ${type}`;
         messageDiv.style.display = 'block';
 
+        // Auto-hide after 7 seconds (longer for success messages)
         setTimeout(() => {
             messageDiv.style.display = 'none';
-        }, 5000);
+        }, 7000);
     }
 
     resetForm() {
-        if (this.leadForm) this.leadForm.reset();
+        if (this.leadForm) {
+            this.leadForm.reset();
+        }
     }
 
     // Modal functions
@@ -374,5 +432,14 @@ style.textContent = `
     .step:nth-child(2) { transition-delay: 0.1s; }
     .step:nth-child(3) { transition-delay: 0.2s; }
     .step:nth-child(4) { transition-delay: 0.3s; }
+    
+    .form-message.success {
+        background: rgba(4, 120, 87, 0.1);
+        border: 2px solid rgba(4, 120, 87, 0.3);
+        color: #047857;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
 `;
 document.head.appendChild(style);
